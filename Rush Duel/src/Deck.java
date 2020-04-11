@@ -1,22 +1,25 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Deck {
 
-	private List<carteMagiEtPiege> mainDeck;
-	public Deck(List<carteMagiEtPiege> mDeck) {
-		this.mainDeck = mDeck;
-	}
+	private List<uneCarte> lesCartes;
+	private List<uneCarte> extraMonstre;
 	
-	public List<carteMagiEtPiege> extraDeck(){
-		List<carteMagiEtPiege> getExtraD = new ArrayList<>();
-		for(int i = 0; i<mainDeck.size(); i++) {
-			if(mainDeck.get(i).getGenre() == "Fusion" || 
-					mainDeck.get(i).getGenre() == "Synchro" || 
-					mainDeck.get(i).getGenre() == "Xyz") {
-				getExtraD.add(mainDeck.get(i));
+	public Deck(List<uneCarte> lesCarte) {
+		this.lesCartes = lesCarte;
+		for(int i = 0; i<=lesCartes.size(); i++) {
+			if(lesCartes.get(i).getExtra() == "Synchro" || 
+					lesCartes.get(i).getExtra() == "Fusion" ||
+					lesCartes.get(i).getExtra() == "Xyz" ) {
+				lesCartes.remove(i);
+				extraMonstre.add(lesCartes.get(i));
 			}
 		}
-		return getExtraD;
+		this.extraMonstre = extraMonstre;
 	}
+	
+	public List<uneCarte> getExtraMonstre() {
+		return extraMonstre;
+	}
+	
 }
