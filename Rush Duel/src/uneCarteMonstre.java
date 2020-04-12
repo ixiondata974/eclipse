@@ -5,14 +5,18 @@ public class uneCarteMonstre extends uneCarte {
 	private String attribut;
 	private String type;
 	private boolean effet;
-	private String extraType;
+	private boolean Syntho;
+	private int niveau;
+	
 	public uneCarteMonstre(String nom, String textEffet, String genre, String ExtraType,
-			String requirement, String attribut, String type) {
+			String requirement, String attribut, String type, int Niveau) {
 		super(nom, textEffet, genre, ExtraType);
 		this.requirement = requirement;
 		this.attribut = attribut;
 		this.type = type;
 		this.effet = true;
+		this.niveau = Niveau;
+		this.Syntho = false;
 	}
 	public String getAttribut() {
 		return attribut;
@@ -29,12 +33,11 @@ public class uneCarteMonstre extends uneCarte {
 	public String getRequirement() {
 		return requirement;
 	}
-	public String getExtraType() {
-		return extraType;
-	}
 	public void setEffet() {
 		this.effet = false;
 	}
-	
+	public void setSyntho() {
+		this.Syntho = true;
+	}
 	
 }

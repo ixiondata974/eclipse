@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Terrein {
 
@@ -11,6 +13,7 @@ public class Terrein {
 	private Deck leDeck;
 	private Deck extraDeck;
 	private Deck leCimetiere;
+	private Deck laMain;
 	
 	public Terrein(Deck ceDeck) {
 		this.zoneMagiePiege1 = null;
@@ -22,6 +25,7 @@ public class Terrein {
 		this.zoneMagieTerrein = null;
 		this.leCimetiere = null;
 		this.leDeck = ceDeck;
+		this.laMain = null;
 		Deck lExtraDeck = new Deck(ceDeck.getExtraMonstre());
 		this.extraDeck = lExtraDeck;
 	}
@@ -53,5 +57,5 @@ public class Terrein {
 	public void setZoneMagieTerrein(uneCarte zoneMagieTerrein) {
 		this.zoneMagieTerrein = zoneMagieTerrein;
 	}
-	
+
 }
