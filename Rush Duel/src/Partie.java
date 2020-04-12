@@ -21,6 +21,8 @@ public class Partie {
 		
 		Deck monDeck = new Deck(leDeck);
 		Terrein unTerrein = new Terrein(monDeck);
+		System.out.println(monDeck.getCarteDeck(3).getNom());
+		System.out.println(unTerrein.getExtraDeck().getExtraMonstre().get(0).getNom());
 	}
 
 }

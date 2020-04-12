@@ -30,6 +30,10 @@ public class Terrein {
 		this.extraDeck = lExtraDeck;
 	}
 
+	public Deck getExtraDeck() {
+		return extraDeck;
+	}
+
 	public void setZoneMonstre1(uneCarte zoneMonstre1) {
 		this.zoneMonstre1 = zoneMonstre1;
 	}
