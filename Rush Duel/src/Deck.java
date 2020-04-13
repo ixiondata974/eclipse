@@ -5,7 +5,6 @@ public class Deck {
 
 	private List<uneCarte> lesCartes = new ArrayList<>();
 	private List<uneCarte> extraMonstre;
-	private List<uneCarte> laMain;
 	
 	public Deck(List<uneCarte> lesCarte) {
 		this.lesCartes = lesCarte;
@@ -20,28 +19,22 @@ public class Deck {
 		}
 		this.extraMonstre = ExtraMonstre;
 	}
+
+	public void removing(int i) {
+		lesCartes.remove(i);
+	}
+	
+//Getter..........................................................
 	
 	public List<uneCarte> getExtraMonstre() {
 		return extraMonstre;
-	}
-	
-	public List<uneCarte> getLaMain() {
-		return laMain;
-	}
-
-	public void setMainDebut() {
-		for(int i = 0; i<4; i++) {
-			laMain.add(lesCartes.get(i));
-			lesCartes.remove(i);
-		}
 	}
 	
 	public uneCarte getCarteDeck(int i) {
 		return lesCartes.get(i);
 	}
 	
-	public void pioche() {
-		laMain.add(lesCartes.get(0));
-		lesCartes.remove(0);
+	public List<uneCarte> getLesCartes() {
+		return lesCartes;
 	}
 }

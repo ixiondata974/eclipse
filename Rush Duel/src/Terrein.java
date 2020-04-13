@@ -13,7 +13,7 @@ public class Terrein {
 	private Deck leDeck;
 	private Deck extraDeck;
 	private Deck leCimetiere;
-	private Deck laMain;
+	private List<uneCarte> laMain = new ArrayList<>();
 	
 	public Terrein(Deck ceDeck) {
 		this.zoneMagiePiege1 = null;
@@ -25,9 +25,21 @@ public class Terrein {
 		this.zoneMagieTerrein = null;
 		this.leCimetiere = null;
 		this.leDeck = ceDeck;
-		this.laMain = null;
 		Deck lExtraDeck = new Deck(ceDeck.getExtraMonstre());
 		this.extraDeck = lExtraDeck;
+	}
+
+	public void mainDebut() {
+		for(int i = 0; i<4; i++) {
+			laMain.add(leDeck.getCarteDeck(0));
+			leDeck.removing(0);
+		}
+	}
+	
+//Getter et Setter......................................................
+	
+	public List<uneCarte> getLaMain() {
+		return laMain;
 	}
 
 	public Deck getExtraDeck() {
@@ -61,5 +73,5 @@ public class Terrein {
 	public void setZoneMagieTerrein(uneCarte zoneMagieTerrein) {
 		this.zoneMagieTerrein = zoneMagieTerrein;
 	}
-
+	
 }
