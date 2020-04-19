@@ -22,7 +22,8 @@ public class Partie {
 		Deck monDeck = new Deck(leDeck);
 		Terrein unTerrein = new Terrein(monDeck);
 		unTerrein.mainDebut();
-		System.out.print(unTerrein.getLaMain().get(0).getNom());
+		unTerrein.setCarte(unTerrein.getLaMain().get(2));
+		//System.out.print(unTerrein.getZoneMagiePiege1().getNom());
+		System.out.print(unTerrein.getZoneMonstre1().getNom());
 	}
-
 }

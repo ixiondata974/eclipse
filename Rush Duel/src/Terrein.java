@@ -36,6 +36,30 @@ public class Terrein {
 		}
 	}
 	
+	public void setCarte(uneCarte laCarte) {
+		if(laCarte.getGenre() == "Monstre") {
+			if(this.zoneMonstre1 == null) {
+				this.zoneMonstre1 = laCarte;
+			}else if(this.zoneMonstre2 == null) {
+				this.zoneMonstre2 = laCarte;
+			}else if(this.zoneMonstre2 == null) {
+				this.zoneMonstre3 = laCarte;
+			}
+		}else if(laCarte.getExtra() == "Terrein") {
+			if(this.zoneMagieTerrein == null) {
+				this.zoneMagieTerrein = laCarte;
+			}
+		}else {
+			if(this.zoneMagiePiege1 == null) {
+				this.zoneMagiePiege1 = laCarte;
+			}else if(this.zoneMagiePiege2 == null) {
+				this.zoneMagiePiege2 = laCarte;
+			}else if(this.zoneMagiePiege3 == null) {
+				this.zoneMagiePiege3 = laCarte;
+			}
+		}
+		
+	}
 //Getter et Setter......................................................
 	
 	public List<uneCarte> getLaMain() {
@@ -46,32 +70,12 @@ public class Terrein {
 		return extraDeck;
 	}
 
-	public void setZoneMonstre1(uneCarte zoneMonstre1) {
-		this.zoneMonstre1 = zoneMonstre1;
+	public uneCarte getZoneMonstre1() {
+		return zoneMonstre1;
 	}
 
-	public void setZoneMonstre2(uneCarte zoneMonstre2) {
-		this.zoneMonstre2 = zoneMonstre2;
-	}
-
-	public void setZoneMonstre3(uneCarte zoneMonstre3) {
-		this.zoneMonstre3 = zoneMonstre3;
-	}
-
-	public void setZoneMagiePiege1(uneCarte zoneMagiePiege1) {
-		this.zoneMagiePiege1 = zoneMagiePiege1;
-	}
-
-	public void setZoneMagiePiege2(uneCarte zoneMagiePiege2) {
-		this.zoneMagiePiege2 = zoneMagiePiege2;
-	}
-
-	public void setZoneMagiePiege3(uneCarte zoneMagiePiege3) {
-		this.zoneMagiePiege3 = zoneMagiePiege3;
-	}
-
-	public void setZoneMagieTerrein(uneCarte zoneMagieTerrein) {
-		this.zoneMagieTerrein = zoneMagieTerrein;
+	public uneCarte getZoneMagiePiege1() {
+		return zoneMagiePiege1;
 	}
 	
 }
