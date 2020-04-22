@@ -43,11 +43,13 @@ public class Partie {
 		frame.setTitle("Welecome to JavaTutorial.net");
 		frame.getContentPane().setLayout(new FlowLayout());
 		
-		for(int i = 0; i<unTerrein.getLaMain().size();i++) {
-			textfield1 = new JTextField(unTerrein.getLaMain().get(i).getNom(),30);
-			frame.add(textfield1);
-		}
+		textfield1 = new JTextField("Textfield 1", 10);
+		textfield2 = new JTextField("Textfield 2", 10);
+		textfield3 = new JTextField("Textfield 3", 10);
 	    
+		frame.add(textfield1);
+		frame.add(textfield2);
+		frame.add(textfield3);
 	    frame.add(b);
 	    frame.pack();
 	    
@@ -59,7 +61,9 @@ public class Partie {
 		
 		b.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				textfield1.setText("");				
+				textfield1.setText("");
+				textfield2.setText("");	
+				textfield3.setText("");	
 			}
 		});
 	}
