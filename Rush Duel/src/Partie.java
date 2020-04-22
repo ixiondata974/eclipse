@@ -1,8 +1,20 @@
+import java.awt.FlowLayout;
+import java.awt.GraphicsConfiguration;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
 public class Partie {
 
+	static GraphicsConfiguration gc;
+	static JTextField textfield1, textfield2, textfield3;
+	static JButton b=new JButton("Submit");
+	
 	public static void main(String[] args) {
 		List<uneCarte> leDeck = new ArrayList();
 		leDeck.add(new uneCarte("Polymerization","Invoquez par fusion un monstre","magie","normal"));
@@ -24,6 +36,31 @@ public class Partie {
 		unTerrein.mainDebut();
 		unTerrein.setCarte(unTerrein.getLaMain().get(2));
 		//System.out.print(unTerrein.getZoneMagiePiege1().getNom());
-		System.out.print(unTerrein.getZoneMonstre1().getNom());
+		
+//.........................................................................................		
+		
+		JFrame frame= new JFrame(gc);
+		frame.setTitle("Welecome to JavaTutorial.net");
+		frame.getContentPane().setLayout(new FlowLayout());
+		
+		for(int i = 0; i<unTerrein.getLaMain().size();i++) {
+			textfield1 = new JTextField(unTerrein.getLaMain().get(i).getNom(),30);
+			frame.add(textfield1);
+		}
+	    
+	    frame.add(b);
+	    frame.pack();
+	    
+		frame.setSize(600, 400);
+		frame.setLocation(200, 200);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		
+		b.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textfield1.setText("");				
+			}
+		});
 	}
 }
