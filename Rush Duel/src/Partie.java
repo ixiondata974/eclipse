@@ -12,8 +12,12 @@ import javax.swing.JTextField;
 public class Partie {
 
 	static GraphicsConfiguration gc;
-	static JTextField textfield1, textfield2, textfield3;
+	static JTextField textfield1, textfield2, textfield3, textfield4, textfield5, textfield6, textfield7;
 	static JButton b=new JButton("Submit");
+	static JButton main1;
+	static JButton main2;
+	static JButton main3;
+	static JButton main4;
 	
 	public static void main(String[] args) {
 		List<uneCarte> leDeck = new ArrayList();
@@ -35,21 +39,30 @@ public class Partie {
 		Terrein unTerrein = new Terrein(monDeck);
 		unTerrein.mainDebut();
 		unTerrein.setCarte(unTerrein.getLaMain().get(2));
-		//System.out.print(unTerrein.getZoneMagiePiege1().getNom());
 		
+		System.out.print(unTerrein.getLaMain().size());
 //.........................................................................................		
 		
 		JFrame frame= new JFrame(gc);
 		frame.setTitle("Welecome to JavaTutorial.net");
 		frame.getContentPane().setLayout(new FlowLayout());
 		
-		textfield1 = new JTextField("Textfield 1", 10);
-		textfield2 = new JTextField("Textfield 2", 10);
-		textfield3 = new JTextField("Textfield 3", 10);
+		textfield1 = new JTextField("", 10);
+		textfield2 = new JTextField("", 10);
+		textfield3 = new JTextField("", 10);
 	    
+		main1 = new JButton(unTerrein.getLaMain().get(0).getNom());
+		main2 = new JButton(unTerrein.getLaMain().get(1).getNom());
+		main3 = new JButton(unTerrein.getLaMain().get(2).getNom());
+		main4 = new JButton(unTerrein.getLaMain().get(3).getNom());
+		
 		frame.add(textfield1);
 		frame.add(textfield2);
 		frame.add(textfield3);
+		frame.add(main1);
+		frame.add(main2);
+		frame.add(main3);
+		frame.add(main4);
 	    frame.add(b);
 	    frame.pack();
 	    
